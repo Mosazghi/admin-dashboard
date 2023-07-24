@@ -45,7 +45,7 @@ class NewsApi {
           <p class="card-text">
             ${article.desc}
           </p>
-          <a href="${article.url}" class="link">Read More</a>
+          <a href="${article.url}" class="link" target="_blank">Read More</a>
         </div>
       `;
       newsSection.appendChild(div);

@@ -32,10 +32,10 @@ class Repos {
       <div class="text-end pt-4">
         <a href="${
           repo.live ? repo.live : repo.src
-        }" class="link me-2"> <i class="bi bi-eye me-2"></i></a>
+        }" class="link me-2 "target="_blank">  <i class="bi bi-eye me-2"></i></a>
         <a href="${
           repo.src
-        }" class="link me-2"> <i class="bi bi-github me-2"></i></a>
+        }" class="link me-2 "target="_blank">  <i class="bi bi-github me-2"></i></a>
       </div>
       `;
       projectGrid.appendChild(article);

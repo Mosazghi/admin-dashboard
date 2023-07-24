@@ -50,7 +50,8 @@ main section {
   background-color: #212121;
 }
 
-section h3 {
+section h3,
+footer a {
   box-shadow: 0px 4px #14ffec;
   color: #777777;
 }
@@ -251,10 +252,6 @@ footer {
   background-color: #212121;
   color: #0d7377;
   padding: 1em 0;
-}
-
-footer a {
-  color: #b9911a;
 }
 
 .loading-spinner {
