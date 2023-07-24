@@ -1,5 +1,4 @@
 const express = require("express");
-const { Octokit } = require("@octokit/rest");
 require("dotenv").config();
 const fetch = require("node-fetch");
 const path = require("path");
