@@ -17,7 +17,7 @@ class NewsApi {
   async getNews() {
     this.news.innerHTML += this.loader;
 
-    const response = await fetch("http://localhost:4000/news");
+    const response = await fetch("/news");
     const data = await response.json();
     return data.articles.map((article) => {
       return {

@@ -15,8 +15,8 @@ class Repos {
 
   async build() {
     this.projects.innerHTML += this.loader;
-    
-    const response = await fetch("http://localhost:4000/repos");
+
+    const response = await fetch("/repos");
     const repositories = await response.json();
 
     const projectGrid = document.querySelector("#project-grid");
