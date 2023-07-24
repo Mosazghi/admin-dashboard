@@ -1,3 +1,4 @@
+import Nav from "./nav.js";
 import NewsApi from "./newsApi.js";
 import Repos from "./repos.js";
 
@@ -10,10 +11,9 @@ import Repos from "./repos.js";
  */
 class Dashboard {
   constructor() {
+    new Nav();
     new NewsApi();
     new Repos();
-
-    
   }
 }
 
