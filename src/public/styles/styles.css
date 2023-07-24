@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none !important;
+}
+
+aside {
+  background-color: #0d7377;
+  min-width: max-content;
+}
+
+aside div {
+  font-size: 1.5rem;
+}
+
+aside h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+aside h1 svg {
+  vertical-align: bottom;
+}
+
+aside h1 svg path,
+aside div i,
+aside span {
+  color: #212121;
+  fill: #212121;
+}
+
+.nav-link {
+  padding: 0;
+}
+
+main {
+  min-width: min-content;
+}
+
+main header {
+  z-index: 10;
+  background-color: #323232;
+  box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.3);
+}
+
+main section {
+  background-color: #212121;
+}
+
+section h3 {
+  box-shadow: 0px 4px #14ffec;
+  color: #777777;
+}
+
+section article p {
+  color: #aaafb0;
+}
+
+header h4,
+header i,
+section article h5,
+#project-grid i,
+#news a {
+  color: #a8d8da !important;
+}
+
+header {
+  position: sticky;
+  top: -6em;
+}
+
+@media screen and (max-width: 992px) {
+  aside h1 span,
+  aside li span,
+  aside div {
+    display: none;
+  }
+  aside img {
+    width: 30px;
+  }
+  aside {
+    width: 4em !important;
+    transition: all 0.5s ease;
+  }
+  aside a {
+    font-size: 1.2rem !important;
+  }
+
+  header {
+    top: -9em;
+  }
+  header #controls a {
+    font-size: 1.7rem !important;
+  }
+
+  header form,
+  header form button {
+    height: 2em !important;
+  }
+
+  header form input {
+    height: 1.5em !important;
+  }
+}
+
+#controls a {
+  font-size: 2.5rem;
+  color: rgb(39, 37, 37);
+  margin-left: 0.3em;
+}
+
+header form {
+  align-items: flex-start;
+  background-color: #222222;
+  border-radius: 1.5em;
+  box-shadow: inset 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  margin: 1.5em 0 1.5em 1.5em;
+  overflow: hidden;
+  padding: 0 0.5em;
+  transition: all 0.3s ease-out;
+}
+header form button {
+  background-color: transparent;
+  border: none;
+  border-radius: 1.25em;
+  height: 3em;
+  margin: 0.1em 0 0;
+  padding: 1px 6px;
+}
+
+header form input {
+  background-color: #222222;
+  border-color: aqua;
+  border: none;
+  border-radius: 1.25em;
+  color: #0d7377;
+  cursor: text;
+  flex: 1;
+  font-size: 1em;
+  height: 2.5em;
+  margin: 0.3em 0 0;
+  transition: all 0.3s ease-out;
+}
+
+header #controls {
+  margin: 1em 1em 1em 0;
+}
+
+header #actions button {
+  margin-left: 0.5em;
+  background-color: #0d7377;
+  color: #323232 !important;
+}
+
+header #actions button:hover {
+  background-color: #14ffec !important;
+  color: #212121 !important;
+}
+
+#projects {
+  flex-grow: 1 !important;
+}
+
+#project-grid {
+  display: grid;
+  padding: 0.5em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+}
+
+#project-grid article {
+  background-color: #323232;
+  border-radius: 1em;
+  padding: 1em 1em 0.5em;
+  margin: 1em;
+  transition: all 0.3s ease-out;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  border-left: 10px solid #0d7377;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.277);
+}
+article:hover {
+  transform: scale(1.05);
+}
+
+#project-grid article p {
+  flex: 1 !important;
+}
+
+#project-grid article div {
+  font-size: 1.5rem;
+}
+
+#news #news-wrapper {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-row-gap: 1em;
+}
+
+#news .card {
+  background-color: #323232;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.277);
+  padding: 0.5em;
+  margin: 0 1em 1em;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+}
+
+#news .card p {
+  width: 250px;
+  margin: 0.2em 0 0.2em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#news .card img {
+  width: 100%;
+  border-radius: 0.5em;
+  object-fit: cover;
+  transition: transform 0.4s ease-out;
+}
+
+#news .card .card-img-wrapper img:hover {
+  transform: scale(1.5);
+}
+
+#news .card:not(:first-child) {
+  margin-top: 0.5em;
+}
+
+#news #news-wrapper .card-img-wrapper {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+footer {
+  text-align: center;
+  background-color: #212121;
+  color: #0d7377;
+  padding: 1em 0;
+}
+
+footer a {
+  color: #b9911a;
+}
+
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

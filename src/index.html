@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script type="module">
+      import Dashboard from "../javascript/dashboard.js";
+      window.addEventListener("DOMContentLoaded", () => {
+        new Dashboard();
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container-fluid p-0">
+      <div class="d-flex">
+        <!-- Sidebar -->
+        <aside class="col-2 pt-2 pt-lg-4 px-0 px-lg-4 text-center">
+          <h1 class="ps-lg-0 mb-4 text-lg-start">
+            <svg
+              class="me-0 me-lg-2"
+              xmlns="http://www.w3.org/2000/svg"
+              height="48"
+              viewBox="0 -960 960 960"
+              width="48"
+            >
+              <path
+                d="M220-40q-24 0-42-18t-18-42v-509q0-24 18-42t42-18h169v60H220v509h520v-509H569v-60h171q24 0 42 18t18 42v509q0 24-18 42t-42 18H220Zm229-307v-457l-88 88-43-43 161-161 161 161-43 43-88-88v457h-60Z"
+              />
+            </svg>
+            <span>SHARE</span>
+          </h1>
+          <hr />
+          <div class="d-grid gap-1">
+            <ul
+              class="nav flex-column gap-3 align-items-center align-items-lg-start"
+            >
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="bi bi-house-door-fill me-0 me-lg-3"></i>
+                  <span> Home</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="bi bi-person-square me-0 me-lg-3"></i>
+                  <span>Profile</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="bi bi-chat-right-fill me-0 me-lg-3 text-center"></i>
+                  <span> Messages</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="bi bi-clock-fill me-0 me-lg-3"></i>
+                  <span> History</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="bi bi-list-task me-0 me-lg-3"></i>
+                  <span> Tasks</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">
+                  <i class="bi bi-people-fill me-0 me-lg-3"></i>
+                  <span> Communities</span>
+                </a>
+              </li>
+            </ul>
+            <hr />
+            <ul
+              class="nav flex-column gap-3 align-items-center align-items-lg-start"
+            >
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="bi bi-gear-fill me-0 me-lg-3"></i>
+                  <span> Settings</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="bi bi-question-circle-fill me-0 me-lg-3"></i>
+                  <span> Support</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="bi bi-shield-fill-check me-0 me-lg-3"></i>
+                  <span> Privacy</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="col-10 p-0 flex-grow-1 flex-shrink-1">
+          <div class="d-flex flex-column">
+            <!-- Hero Section -->
+            <header>
+              <div
+                class="d-flex align-items-center flex-wrap gap-2 px-1"
+                id="header-top"
+              >
+                <form role="search">
+                  <button type="submit">
+                    <i class="bi bi-search"></i>
+                  </button>
+                  <input
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                </form>
+
+                <div id="controls">
+                  <a href="#">
+                    <i class="bi bi-sun"></i>
+                  </a>
+                  <a href="#">
+                    <i class="bi bi-moon-fill"></i>
+                  </a>
+                  <a
+                    href="https://github.com/Mosazghi/admin-dashboard"
+                    target="_blank"
+                  >
+                    <i class="bi bi-github"> </i>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="d-flex px-3 flex-column flex-lg-row align-items-center my-3"
+                id="header-bottom"
+              >
+                <h4 class="flex-grow-1 flex-shrink-1">
+                  Share your projects with the world!
+                </h4>
+                <div id="actions">
+                  <button class="btn rounded-4">New</button
+                  ><button class="btn rounded-4">Upload</button
+                  ><button class="btn rounded-4">Share</button>
+                </div>
+              </div>
+            </header>
+
+            <!-- Main Content Section -->
+            <!-- Fully possible combining both using grid instead! -->
+            <section
+              class="px-3 pt-4 d-flex flex-column flex-md-row align-items-center align-items-md-start"
+              id="test3"
+            >
+              <div id="projects">
+                <h3 class="d-inline">My projects</h3>
+                <div id="project-grid"></div>
+              </div>
+              <div id="news">
+                <h3 class="d-inline">Latest News</h3>
+                <div class="p-2 mt-4" id="news-wrapper"></div>
+              </div>
+            </section>
+            <!-- Footer Section -->
+            <footer>
+              <p>
+                Created by <a href="https://github.com/Mosazghi">Mosazghi</a>
+              </p>
+            </footer>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
