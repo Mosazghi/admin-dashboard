@@ -1,10 +1,12 @@
 const express = require("express");
 const { Octokit } = require("@octokit/rest");
 require("dotenv").config();
+const fetch = require("node-fetch");
 const path = require("path");
 const PORT = 4000;
 const app = express();
 
+app.use(express.json());
 app.use((req, res, next) => {
   console.log(`HTTP Method - ${req.method}, URL - ${req.url}`);
   next();
@@ -29,12 +31,17 @@ app.get("/news", (req, res) => {
 });
 
 // GITHUB API ---------------------------------------------------
-const octokit = new Octokit({ auth: process.env.GITHUB_API_KEY });
+const GITHUB_API_URL = "https://api.github.com/user/repos";
 
 app.get("/repos", async (req, res) => {
   try {
-    const response = await octokit.repos.listForAuthenticatedUser();
-    const repositories = response.data.map((repo) => {
+    const response = await fetch(GITHUB_API_URL, {
+      headers: {
+        Authorization: `token ${process.env.GITHUB_API_KEY}`,
+      },
+    });
+    const data = await response.json();
+    const repositories = data.map((repo) => {
       return {
         name: repo.name,
         desc: repo.description,
@@ -42,10 +49,9 @@ app.get("/repos", async (req, res) => {
         live: repo.homepage,
       };
     });
-
-    res.send(repositories);
+    res.json(repositories);
   } catch (error) {
-    console.error("Error retrieving repositories:", error);
+    res.status(500).json({ error: "Error fetching repositories" });
   }
 });
 
