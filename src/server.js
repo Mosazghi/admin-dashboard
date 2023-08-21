@@ -30,7 +30,7 @@ app.get("/news", (req, res) => {
 });
 
 // GITHUB API ---------------------------------------------------
-const GITHUB_API_URL = "https://api.github.com/user/repos";
+const GITHUB_API_URL = "https://api.github.com/users/Mosazghi/repos";
 
 app.get("/repos", async (req, res) => {
   try {
