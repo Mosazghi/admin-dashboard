@@ -6,7 +6,7 @@ const PORT = 4000;
 const app = express();
 
 app.use(express.json());
-app.use((req, res, next) => {
+app.use((req, _, next) => {
   console.log(`HTTP Method - ${req.method}, URL - ${req.url}`);
   next();
 });
@@ -17,22 +17,25 @@ app.use(express.static(path.join(__dirname, "public")));
 const NewsAPI = require("newsapi");
 const newsapi = new NewsAPI(process.env.NEWS_API_KEY);
 
-app.get("/news", (req, res) => {
+app.get("/news", (_, res) => {
   newsapi.v2
     .topHeadlines({
       language: "en",
       country: "us",
-      pageSize: 4,
+      pageSize: 7,
     })
     .then((response) => {
-      res.send(response);
+      const articles = response.articles.filter(
+        (article) => article.urlToImage !== null,
+      );
+      res.send(articles);
     });
 });
 
 // GITHUB API ---------------------------------------------------
 const GITHUB_API_URL = "https://api.github.com/users/Mosazghi/repos";
 
-app.get("/repos", async (req, res) => {
+app.get("/repos", async (_, res) => {
   try {
     const response = await fetch(GITHUB_API_URL, {
       headers: {
@@ -55,7 +58,7 @@ app.get("/repos", async (req, res) => {
 });
 
 // APP ---------------------------------------------------
-app.get("/", (req, res) => {
+app.get("/", (_, res) => {
   res.sendFile(path.join(__dirname, "", "index.html"));
 });
 

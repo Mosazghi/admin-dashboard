@@ -19,7 +19,7 @@ class NewsApi {
 
     const response = await fetch("/news");
     const data = await response.json();
-    return data.articles.map((article) => {
+    return data.map((article) => {
       return {
         title: article.title,
         desc: article.description,
